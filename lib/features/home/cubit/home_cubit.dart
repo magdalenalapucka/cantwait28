@@ -26,7 +26,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> remove({required String documentID}) async {
     try {
-      await _itemsRepository.delete(id: documentID);
+      await _itemsRepository.get(id: documentID);
     } catch (error) {
       emit(
         const HomeState(removingErrorOccured: true),
